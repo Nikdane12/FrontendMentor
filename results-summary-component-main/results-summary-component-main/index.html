@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+    body{
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+    #cont{
+      display: flex;
+      width: 450px;
+      height: 325px;
+      background-color: rgb(251, 251, 251);
+      border-radius: 25px;
+      filter: drop-shadow(8px 8px 6px hsl(221, 100%, 96%));
+    }
+    #left, #right{
+      width: 50%;
+      height:100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;}
+    #left{
+      background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      border-radius: 25px;
+      color: white;
+    }
+    #leftheader{
+      font-size: 16px;
+      padding: 20px;
+      color: hsl(241, 100%, 89%);
+    }
+    #score{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      border-radius: 75px;
+      padding: 35px;
+      aspect-ratio: 1 / 1;
+    }
+    #avgscore{
+      font-size: 45px;
+    }
+    #outof{
+      font-size: 12px;
+      opacity: 0.5;
+
+    }
+    #message-cont{
+      height: 100px;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #msg-header{
+      font-size: 24px;
+      padding: 10px;
+    }
+    #message{
+      width: 68%;
+      text-align: center;
+      opacity: 0.7;
+    }
+    #right>*{width: 75%;}
+    #rightheader, #submit-button{margin: 10px 0;}
+    #elements-cont{display: flex;flex-direction: column;gap: 10px;}
+    .element{
+      display: flex;
+      align-items: center;
+      height: 45px;
+      font-size: 12px;
+      border-radius: 10px;
+    }
+    .element.red{
+      background-color:#ff555510;
+      color: #ff5555;
+    }
+    .element.yellow{
+      background-color:#FFB21E10; 
+      color: #FFB21E;
+    }
+    .element.green{
+      background-color:#00BB8F10; 
+      color: #00BB8F;
+    }
+    .element.blue{
+      background-color:#1125D610; 
+      color: #1125D6;
+    }
+    .icon{margin: 0 10px;}
+    .title{margin-right: auto;}
+    .score{color: #000;}
+    .scoreoutof{color: #676767;margin-right: 10px;}
+    #submit-button{
+      text-align: center;
+      color: white;
+      border-radius: 25px;
+      padding: 10px 0;
+      background-color: hsl(224, 30%, 27%);
+    }
+    #submit-button:hover{background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));}
+
+    @media only screen and (max-width: 375px) {
+      #cont{flex-direction: column;width: 300px;height: auto;border-radius:0;}
+      #left,#right{width: 100%;height: 50%;}
+      #left{border-radius: 0 0 25px 25px;}
+      #score{padding: 20px;}
+      #message-cont{height: 120px;justify-content:flex-start;}  
+      #msg-header{padding: 12px;}
+    }
+  </style>
+</head>
+<body>
+  <div id="cont">
+    <div id="left">
+      <div id="leftheader">Your Result</div>
+      <div id="score">
+        <div id="avgscore">76</div>
+        <div id="outof">of 100</div>
+      </div>
+      <div id="message-cont">
+        <div id="msg-header">Great</div>
+        <div id="message"> You scored higher than 65% of the people who have taken these tests. </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="rightheader">Summary</div>
+      <div id="elements-cont">
+        <div class="element red">
+          <div class="icon"><img src="assets/images/icon-reaction.svg"></div>
+          <div class="title">Reaction</div>
+          <div class="score">80</div>
+          <div class="scoreoutof">&nbsp;/ 100</div>
+        </div>
+        <div class="element yellow">
+          <div class="icon"><img src="assets/images/icon-memory.svg"></div>
+          <div class="title">Memory</div>
+          <div class="score">92</div>
+          <div class="scoreoutof">&nbsp;/ 100</div>
+        </div>
+        <div class="element green">
+          <div class="icon"><img src="assets/images/icon-verbal.svg"></div>
+          <div class="title">Verbal</div>
+          <div class="score">61</div>
+          <div class="scoreoutof">&nbsp;/ 100</div>
+        </div>
+        <div class="element blue">
+          <div class="icon"><img src="assets/images/icon-visual.svg"></div>
+          <div class="title">Visual</div>
+          <div class="score">72</div>
+          <div class="scoreoutof">&nbsp;/ 100</div>
+        </div>
+      </div>
+      <div id="submit-button">Continue</div>
+    </div>
+  </div>
+</body>
+</html>
